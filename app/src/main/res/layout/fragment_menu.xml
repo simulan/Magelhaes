@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context="be.sanderdebleecker.magelhaes.Views.MenuFragment"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_Start"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/start_menu_fragment"/>
+</LinearLayout>

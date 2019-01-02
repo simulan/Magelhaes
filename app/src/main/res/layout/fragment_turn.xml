@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:orientation="vertical"
+              android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:padding="10dp"
+
+             tools:context="be.sanderdebleecker.magelhaes.Views.TurnFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="@string/scenario"
+        android:id="@+id/txtvScenario"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/txtvOption1"
+        android:shadowRadius="1"
+        android:textColor="@color/colorAccent"
+        android:text="option"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/txtvOption2"
+        android:textColor="@color/colorAccent"
+        android:text="option"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/txtvOption3"
+        android:textColor="@color/colorAccent"
+        android:text="option"
+        />
+
+</LinearLayout>
