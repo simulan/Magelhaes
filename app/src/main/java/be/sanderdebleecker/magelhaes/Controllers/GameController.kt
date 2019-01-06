@@ -3,6 +3,7 @@ package be.sanderdebleecker.magelhaes.Controllers
 import be.sanderdebleecker.magelhaes.BL.DeckOfTurns
 import be.sanderdebleecker.magelhaes.BL.GameState
 import be.sanderdebleecker.magelhaes.Turns.Base.BaseTurn
+import be.sanderdebleecker.magelhaes.Turns.Base.StateChange
 
 /**
  * Created by Sander De Bleecker on 25/12/2018.
@@ -23,13 +24,26 @@ class GameController {
             state.Turn++
             return deck.take()
         }else{
-            if (state.Victory) {
-                playState = PlayState.Victory
-            } else {
-                playState = PlayState.Defeat
-            }
             return null
         }
+    }
+
+    fun calculatePlayState() {
+        if (state.Victory) {
+            playState = PlayState.Victory
+        } else {
+            if (state.Playing) {
+                playState = PlayState.Play
+            }else {
+                playState = PlayState.Defeat
+            }
+        }
+    }
+
+    fun onDecision(effect: StateChange) : PlayState {
+        effect.apply(state)
+        calculatePlayState()
+        return playState;
     }
 
     fun onAdvanceTurn() : BaseTurn? {

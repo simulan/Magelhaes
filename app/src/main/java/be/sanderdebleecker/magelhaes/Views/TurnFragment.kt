@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import be.sanderdebleecker.magelhaes.R
 import be.sanderdebleecker.magelhaes.Turns.Base.BaseTurn
 import be.sanderdebleecker.magelhaes.Turns.Base.Turn
 import kotlinx.android.synthetic.main.fragment_turn.*
@@ -15,31 +16,46 @@ class TurnFragment : Fragment() {
     private var mListener: IGameView? = null
     private lateinit var turn: Turn
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val v = inflater.inflate(R.layout.fragment_turn, container, false)
+        return v
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null) {
             val i = activity!!.intent
-            val turn: BaseTurn = i.getSerializableExtra(TURN_PARAMETER) as BaseTurn
-            showTurn(turn);
+            turn = i.getSerializableExtra(TURN_PARAMETER) as BaseTurn
+            showTurn(turn)
+            bindEvents()
         }
+    }
+
+    fun bindEvents() {
+        if (txtvOption1.text != "")
+            txtvOption1.setOnClickListener { onClickOption(0) }
+        if (txtvOption2.text != "")
+            txtvOption2.setOnClickListener { onClickOption(1) }
+        if (txtvOption3.text != "")
+            txtvOption3.setOnClickListener { onClickOption(2) }
+    }
+
+    fun onClickOption(indexOptionClicked: Int) {
+        mListener!!.onClickDecision(turn.Options[indexOptionClicked].Consequence)
     }
 
     fun showTurn(turn: Turn) {
         txtvScenario.text = turn.Scenario
+        txtvOption1.text = ""
+        txtvOption2.text = ""
+        txtvOption3.text = ""
+
         if (turn.Options.isNotEmpty()) {
             txtvOption1.text = turn.Options[0].Text;
             if (turn.Options.size > 1) {
                 txtvOption2.text = turn.Options[1].Text;
                 if (turn.Options.size > 2) {
-                    txtvOption2.text = turn.Options[2].Text;
+                    txtvOption3.text = turn.Options[2].Text;
                 }
             }
         }

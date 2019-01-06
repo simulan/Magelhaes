@@ -10,6 +10,7 @@ class GameState {
     var Victory = false
     var Playing = true
     var Turn = 0
-    var Crew: List<CrewMember> = ArrayList()
+    var Hull = DEFAULT_HULL_VALUE
+    var Crew: MutableList<CrewMember> = ArrayList()
     var Captain = CrewMember()
 }
