@@ -1,7 +1,13 @@
 package be.sanderdebleecker.magelhaes.BL
 
 import be.sanderdebleecker.magelhaes.Turns.Base.BaseTurn
+import be.sanderdebleecker.magelhaes.Turns.BurningVessel.BurningVesselTurn
+import be.sanderdebleecker.magelhaes.Turns.FakeLightHouse.FakeLightHouseTurn
+import be.sanderdebleecker.magelhaes.Turns.MysteryRock.MysteryRockTurn
+import be.sanderdebleecker.magelhaes.Turns.ReturnCommand.ReturnCommandTurn
+import be.sanderdebleecker.magelhaes.Turns.Scorbus.ScorbusTurn
 import be.sanderdebleecker.magelhaes.Turns.Start.StartTurn
+import be.sanderdebleecker.magelhaes.Turns.Support.SupportTurn
 import be.sanderdebleecker.magelhaes.Turns.Victory.VictoryTurn
 import java.util.*
 
@@ -16,6 +22,12 @@ class DeckOfTurns {
     init {
         deck = ArrayList()
         deck.add(StartTurn())
+        deck.add(ReturnCommandTurn())
+        deck.add(ScorbusTurn())
+        deck.add(BurningVesselTurn())
+        deck.add(SupportTurn())
+        deck.add(MysteryRockTurn())
+        deck.add(FakeLightHouseTurn())
         deck.add(VictoryTurn())
     }
 
