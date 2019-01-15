@@ -1,4 +1,4 @@
-package be.sanderdebleecker.magelhaes.BL
+package be.sanderdebleecker.magelhaes.Models
 
 /**
  * Created by Sander De Bleecker on 25/12/2018.

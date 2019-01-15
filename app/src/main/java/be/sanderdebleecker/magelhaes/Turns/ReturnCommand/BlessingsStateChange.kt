@@ -5,6 +5,6 @@ import be.sanderdebleecker.magelhaes.Turns.Base.StateChange
 
 class BlessingsStateChange : StateChange() {
     override fun apply(state: GameState) {
-        // todo skip turn in statechange and add karma
+        // todo skip turn in statechange and set karma
     }
 }

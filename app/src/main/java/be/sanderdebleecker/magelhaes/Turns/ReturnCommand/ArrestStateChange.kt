@@ -1,6 +1,6 @@
 package be.sanderdebleecker.magelhaes.Turns.ReturnCommand
 
-import be.sanderdebleecker.magelhaes.BL.CrewMember
+import be.sanderdebleecker.magelhaes.Models.CrewMember
 import be.sanderdebleecker.magelhaes.BL.GameState
 import be.sanderdebleecker.magelhaes.Turns.Base.StateChange
 

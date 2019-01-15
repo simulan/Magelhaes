@@ -8,6 +8,7 @@ import java.io.Serializable
  */
 
 open class StateChange : Serializable {
+
     open fun apply(state: GameState) {
         // nothing
     }
