@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity(), IGameView {
         supportFragmentManager.beginTransaction().replace(R.id.main_container, fragment).commit()
     }
     override fun onClickStart() {
-        // micmic onAdvanceTurn for the moment
         onAdvanceTurn()
     }
     override fun onAdvanceTurn() {
