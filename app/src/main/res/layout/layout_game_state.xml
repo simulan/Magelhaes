@@ -10,8 +10,9 @@
         android:id="@+id/txtvName"
         android:layout_width="118dp"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="center_vertical | end "
         android:text="name"
+        android:padding="5dp"
         android:textAllCaps="true"
         />
 
