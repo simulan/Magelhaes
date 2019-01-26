@@ -8,14 +8,14 @@ class RepairStateChange : StateChange() {
     private val REPAIR_VALUE = 30
 
     override fun apply(state: GameState) {
-        if(state.Hull < DEFAULT_HULL_VALUE) {
-            state.Hull += REPAIR_VALUE
+        if(state.hull < DEFAULT_HULL_VALUE) {
+            state.hull += REPAIR_VALUE
             restrictToMaximumValue(state)
         }
     }
     private fun restrictToMaximumValue(state : GameState) {
-        if(state.Hull > DEFAULT_HULL_VALUE) {
-            state.Hull = DEFAULT_HULL_VALUE
+        if(state.hull > DEFAULT_HULL_VALUE) {
+            state.hull = DEFAULT_HULL_VALUE
         }
     }
 }

@@ -6,7 +6,7 @@ import be.sanderdebleecker.magelhaes.Turns.Base.StateChange
 
 class MedicStateChange : StateChange() {
     override fun apply(state: GameState) {
-        state.Crew.filter { it.Health < DEFAULT_HEALTH_VALUE }
-            .forEach { it.Health = DEFAULT_HEALTH_VALUE }
+        state.crew.filter { it.health < DEFAULT_HEALTH_VALUE }
+            .forEach { it.health = DEFAULT_HEALTH_VALUE }
     }
 }

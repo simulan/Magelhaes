@@ -7,6 +7,6 @@ class ExtinguishBurningVesselStateChange : StateChange() {
 
 
     override fun apply(state: GameState) {
-        state.Hull -= 5
+        state.hull -= 5
     }
 }

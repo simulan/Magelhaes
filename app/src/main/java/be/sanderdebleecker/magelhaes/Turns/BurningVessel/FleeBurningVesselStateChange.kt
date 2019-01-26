@@ -8,7 +8,7 @@ class FleeBurningVesselStateChange : StateChange() {
 
 
     override fun apply(state: GameState) {
-        state.Crew.slice(state.Crew.size-1-CREW_MEMBERS_LOST until state.Crew.size)
-        state.Hull -= 60
+        state.crew.slice(state.crew.size-1-CREW_MEMBERS_LOST until state.crew.size)
+        state.hull -= 60
     }
 }

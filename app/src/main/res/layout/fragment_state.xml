@@ -6,7 +6,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:padding="10dp"
               android:orientation="vertical"
-              tools:context=".Views.StatusFragment">
+              tools:context=".Views.StateFragment">
 
     <TextView
         android:layout_width="match_parent"
@@ -15,13 +15,13 @@
         android:textStyle="bold"
         android:text="State"/>
 
-    <android.support.RecyclerView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerCrewMembers"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/round_border_shape"
         >
 
-    </android.support.RecyclerView>
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

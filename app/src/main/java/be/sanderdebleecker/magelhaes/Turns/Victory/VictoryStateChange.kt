@@ -9,6 +9,6 @@ import be.sanderdebleecker.magelhaes.Turns.Base.StateChange
 
 class VictoryStateChange : StateChange() {
     override fun apply(state: GameState) {
-        state.Victory = true
+        state.victory = true
     }
 }

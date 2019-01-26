@@ -27,7 +27,7 @@ class GameController {
     }
 
     fun next() : BaseTurn? {
-        if (state.Playing && !state.Victory) {
+        if (state.playing && !state.victory) {
             state.Turn++
             return deck.take()
         }else{
@@ -36,10 +36,10 @@ class GameController {
     }
 
     fun calculatePlayState() {
-        if (state.Victory) {
+        if (state.victory) {
             playState = PlayState.Victory
         } else {
-            if (state.Playing) {
+            if (state.playing) {
                 playState = PlayState.Play
             }else {
                 playState = PlayState.Defeat
@@ -65,4 +65,6 @@ class GameController {
     fun onAdvanceTurn() : BaseTurn? {
         return next()
     }
+
+    fun getStatus() : GameState = state
 }

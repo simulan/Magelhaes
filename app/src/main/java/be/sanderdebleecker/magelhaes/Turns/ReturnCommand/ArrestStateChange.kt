@@ -6,6 +6,6 @@ import be.sanderdebleecker.magelhaes.Turns.Base.StateChange
 
 class ArrestStateChange : StateChange(){
     override fun apply(state: GameState) {
-        state.Crew.add(CrewMember("Josephius"))
+        state.crew.add(CrewMember("Josephius"))
     }
 }
