@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import be.sanderdebleecker.magelhaes.BL.GameState
 import be.sanderdebleecker.magelhaes.R
-import be.sanderdebleecker.magelhaes.Views.Adapters.CrewMemberAdapter
+import be.sanderdebleecker.magelhaes.Views.Adapters.GameStateAdapter
 import kotlinx.android.synthetic.main.fragment_state.*
 
 
@@ -36,7 +36,7 @@ class StateFragment : Fragment() {
     private fun showState(gameState: GameState) {
         recycler = recyclerCrewMembers as RecyclerView
         recycler.layoutManager = LinearLayoutManager(context)
-        recycler.adapter = CrewMemberAdapter(gameState.crew, context!!) //todo add captain
+        recycler.adapter = GameStateAdapter(gameState.crew, context!!) //todo add captain
     }
 
 

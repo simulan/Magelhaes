@@ -12,9 +12,24 @@ import be.sanderdebleecker.magelhaes.Models.CrewMember
 import be.sanderdebleecker.magelhaes.R
 import kotlinx.android.synthetic.main.layout_game_state.view.*
 
-class CrewMemberAdapter(private val list: List<CrewMember>, private val context: Context) : RecyclerView.Adapter<CrewMemberAdapter.CrewMemberViewHolder>() {
-    private val maxHealth = 6
+// we could put all the login in the Detail classes , relieving the GameStateAdapter from typecasting
+// and just using one abstract class with a version of every method in the recyclerview
+// e.g a class called 'GameStateAdaptation'
 
+class GameStateAdapter(private val list: List<CrewMember>, private val context: Context) : RecyclerView.Adapter<GameStateAdapter.CrewMemberViewHolder>() {
+    private val maxHealth = 6
+    enum class ViewType {
+        CREW_MEMBER,
+        STATE_DETAIL
+    }
+
+
+
+    override fun getItemViewType(position: Int): Int {
+        // requires list with all types in it
+        // cast it
+        return super.getItemViewType(position)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CrewMemberViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_game_state, parent, false)
