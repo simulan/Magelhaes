@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerHull"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:layout_margin="10dp"
+    >
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/txtvName"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:gravity="center_vertical | end"
+        android:padding="5dp"
+        android:textAllCaps="true"
+        />
+
+    <View
+        android:id="@+id/viewHullHealth"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight=".8"
+        android:background="@drawable/hull_healthbar"
+        android:gravity="center">
+    </View>
+</LinearLayout>

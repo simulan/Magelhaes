@@ -29,9 +29,9 @@ class HistoryUT {
         val s0 = GameState()
         val s1 = GameState()
         val s2 = GameState()
-        s1.hull -= s1.hull / 2
+        s1.vessel -= s1.vessel / 2
         s1.Turn = 1
-        s2.hull = s1.hull
+        s2.vessel = s1.vessel
         s2.Turn = 2
 
         history[0] = s0
@@ -45,7 +45,7 @@ class HistoryUT {
         assertEquals(s0.Turn,0)
         assertEquals(s1.Turn,1)
         assertEquals(s2.Turn,2)
-        assertEquals(s1.hull,s0.hull /2 )
+        assertEquals(s1.vessel,s0.vessel /2 )
     }
 
     // test to check if a saved state doesn't change by reference
@@ -56,25 +56,25 @@ class HistoryUT {
         val hullAfterTurn0: Int
         val hullAfterTurn1: Int
         val hullAfterTurn2: Int
-        val delta = state.hull / 8
+        val delta = state.vessel / 8
 
         // turn 0
-        state.hull -= delta
-        hullAfterTurn0 = state.hull
+        state.vessel -= delta
+        hullAfterTurn0 = state.vessel
         h[0] = state
 
         // turn 1
-        state.hull -= delta
-        hullAfterTurn1 = state.hull
+        state.vessel -= delta
+        hullAfterTurn1 = state.vessel
         h[1] = state
 
         // turn 2
-        state.hull -= delta
-        hullAfterTurn2 = state.hull
+        state.vessel -= delta
+        hullAfterTurn2 = state.vessel
         h[2] = state
 
-        assertEquals(hullAfterTurn0,h[0].hull)
-        assertEquals(hullAfterTurn1,h[1].hull)
-        assertEquals(hullAfterTurn2,h[2].hull)
+        assertEquals(hullAfterTurn0,h[0].vessel)
+        assertEquals(hullAfterTurn1,h[1].vessel)
+        assertEquals(hullAfterTurn2,h[2].vessel)
     }
 }

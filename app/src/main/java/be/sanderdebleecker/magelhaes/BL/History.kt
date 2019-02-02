@@ -11,7 +11,7 @@ class History {
 
     private fun GameState.clone() : GameState {
         val state  = GameState()
-        state.hull = this.hull
+        state.vessel = this.vessel
         state.captain = this.captain
         state.crew = this.crew
         state.money = this.money

@@ -36,7 +36,13 @@ class StateFragment : Fragment() {
     private fun showState(gameState: GameState) {
         recycler = recyclerCrewMembers as RecyclerView
         recycler.layoutManager = LinearLayoutManager(context)
-        recycler.adapter = GameStateAdapter(gameState.crew, context!!) //todo add captain
+
+        val list : MutableList<Any> = mutableListOf<Any>()
+        list.add(gameState.captain)
+        list.addAll(gameState.crew)
+        list.add(gameState.vessel)
+
+        recycler.adapter = GameStateAdapter(list, context!!)
     }
 
 

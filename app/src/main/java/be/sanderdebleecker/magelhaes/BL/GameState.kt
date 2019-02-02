@@ -1,6 +1,7 @@
 package be.sanderdebleecker.magelhaes.BL
 
 import be.sanderdebleecker.magelhaes.Models.CrewMember
+import be.sanderdebleecker.magelhaes.Models.Vessel
 import java.io.Serializable
 
 /**
@@ -8,7 +9,7 @@ import java.io.Serializable
  */
 
 class GameState : Serializable {
-    var hull = DEFAULT_HULL_VALUE
+    var vessel = Vessel("Trinidad", DEFAULT_HULL_VALUE,DEFAULT_HULL_VALUE)
     var crew = mutableListOf(
     CrewMember("Haby", 4,4),
     CrewMember("Nadia", 2,4),
