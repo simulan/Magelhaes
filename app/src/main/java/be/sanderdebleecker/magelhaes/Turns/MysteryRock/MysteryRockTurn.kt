@@ -10,7 +10,7 @@ class MysteryRockTurn : BaseTurn() {
                     "proximity to the mysterious rock. A part of the crew demands to avoid the entity but you are intrigued by "+
                     "the colour and texture of the rock, why is their a floating rock in the middle of the ocean?"
 
-        Options = listOf(Decision("Turn starboard and avoid it", StateChange()),
+        Options = listOf(Decision("turn starboard and avoid it", StateChange()),
                     Decision("Board it and see what's what", MysteryRockBoardStateChange()),
                 Decision("Shoot with all cannons towards the rock ", StateChange()))
     }

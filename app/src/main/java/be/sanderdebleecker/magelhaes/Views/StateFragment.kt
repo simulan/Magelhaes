@@ -3,6 +3,7 @@ package be.sanderdebleecker.magelhaes.Views
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -12,6 +13,8 @@ import be.sanderdebleecker.magelhaes.BL.GameState
 import be.sanderdebleecker.magelhaes.R
 import be.sanderdebleecker.magelhaes.Views.Adapters.GameStateAdapter
 import kotlinx.android.synthetic.main.fragment_state.*
+
+
 
 
 class StateFragment : Fragment() {
@@ -36,12 +39,11 @@ class StateFragment : Fragment() {
     private fun showState(gameState: GameState) {
         recycler = recyclerCrewMembers as RecyclerView
         recycler.layoutManager = LinearLayoutManager(context)
-
+        recycler.addItemDecoration(DividerItemDecoration(activity!!, DividerItemDecoration.VERTICAL))
         val list : MutableList<Any> = mutableListOf<Any>()
         list.add(gameState.captain)
         list.addAll(gameState.crew)
         list.add(gameState.vessel)
-
         recycler.adapter = GameStateAdapter(list, context!!)
     }
 

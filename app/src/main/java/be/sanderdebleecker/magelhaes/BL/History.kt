@@ -16,7 +16,7 @@ class History {
         state.crew = this.crew
         state.money = this.money
         state.playing = this.playing
-        state.Turn = this.Turn
+        state.turn = this.turn
         state.victory = this.victory
         return state
     }

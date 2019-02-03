@@ -20,6 +20,6 @@ class GameState : Serializable {
     var captain = CrewMember("Sander", 6,6)
     var playing = true
     var victory = false
-    var Turn = 0
+    var turn = 0
     var money = 0
 }

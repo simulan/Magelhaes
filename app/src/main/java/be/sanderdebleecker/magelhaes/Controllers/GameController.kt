@@ -17,7 +17,7 @@ class GameController {
     private val history = History()
 
     init {
-        history[state.Turn] = state
+        history[state.turn] = state
     }
 
     var playState = PlayState.Play
@@ -28,7 +28,7 @@ class GameController {
 
     fun next() : BaseTurn? {
         if (state.playing && !state.victory) {
-            state.Turn++
+            state.turn++
             return deck.take()
         }else{
             return null
@@ -53,7 +53,7 @@ class GameController {
     **/
     fun onDecision(effect: StateChange) : PlayState {
         effect.apply(state)
-        history[state.Turn]=state
+        history[state.turn]=state
 
         calculatePlayState()
         return playState;
