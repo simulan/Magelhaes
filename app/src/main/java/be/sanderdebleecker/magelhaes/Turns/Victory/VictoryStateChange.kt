@@ -8,6 +8,10 @@ import be.sanderdebleecker.magelhaes.Turns.Base.StateChange
  */
 
 class VictoryStateChange : StateChange() {
+    init{
+        explanation = "You've won!"
+    }
+
     override fun apply(state: GameState) {
         state.victory = true
     }

@@ -1,6 +1,7 @@
 package be.sanderdebleecker.magelhaes
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity(), IGameView {
         setContentView(R.layout.activity_main)
 
         if (main_container != null) {
+            //val firstFragment = RenderFragment()
             val firstFragment = MenuFragment()
             supportFragmentManager.beginTransaction().add(R.id.main_container, firstFragment).commit()
         }
@@ -66,4 +68,8 @@ class MainActivity : AppCompatActivity(), IGameView {
         }
     }
 
+    override fun onTestClick() {
+        val intent = Intent(this, RenderActivity::class.java)
+        startActivity(intent)
+    }
 }

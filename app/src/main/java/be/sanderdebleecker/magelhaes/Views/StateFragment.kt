@@ -33,6 +33,7 @@ class StateFragment : Fragment() {
             val i = activity!!.intent
             gameState = i.getSerializableExtra(StateFragment.STATE_PARAMETER) as GameState
             showState(gameState)
+            btnContinue!!.setOnClickListener { onClickContinue() }
         }
     }
 
@@ -47,6 +48,9 @@ class StateFragment : Fragment() {
         recycler.adapter = GameStateAdapter(list, context!!)
     }
 
+    private fun onClickContinue() {
+        listener!!.onAdvanceTurn()
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

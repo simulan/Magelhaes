@@ -14,6 +14,7 @@ class MenuFragment : Fragment() {
 
     private var mListener: IGameView? = null
     private var btnStart: Button? = null
+    private var btnTest: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,19 +24,26 @@ class MenuFragment : Fragment() {
     }
 
     private fun bindEvents() {
-        btnStart!!.setOnClickListener { onButtonPressed() }
+        btnStart!!.setOnClickListener { onStartPressed() }
+        btnTest!!.setOnClickListener { onTestPressed() }
     }
 
+    private fun onTestPressed() {
+        if (mListener != null) {
+            mListener!!.onTestClick()
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_menu, container, false)
-        btnStart = v.findViewById(R.id.btn_Start) as Button
+        btnStart = v.findViewById(R.id.btnStart) as Button
+        btnTest = v.findViewById(R.id.btnTest) as Button
         bindEvents()
         return v
     }
 
-    fun onButtonPressed() {
+    fun onStartPressed() {
         if (mListener != null) {
             mListener!!.onClickStart()
         }

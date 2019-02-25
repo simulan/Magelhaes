@@ -6,4 +6,6 @@ interface IGameView {
     fun onClickStart()
     fun onAdvanceTurn()
     fun onClickDecision(effect: StateChange)
+
+    fun onTestClick()
 }

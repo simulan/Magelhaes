@@ -5,6 +5,11 @@ import be.sanderdebleecker.magelhaes.BL.GameState
 import be.sanderdebleecker.magelhaes.Turns.Base.StateChange
 
 class RepairStateChange : StateChange() {
+    init {
+        explanation = "A team of medici embark like a swift gust, your entire crew "
+    }
+
+
     private val REPAIR_VALUE = 30
 
     override fun apply(state: GameState) {
